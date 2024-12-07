@@ -1,0 +1,67 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "service": "Service",
+        "menu": "Menu",
+        "contact": "Contact"
+    },
+    "items": [
+        {
+            "id": 1,
+            "name": "Margherita Pizza",
+            "description": "Classic cheese pizza with tomato sauce.",
+            "price": 8.99,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvC1pGhW7_BRwnGuBguLE99tfA0faYflekCA&s"
+        },
+        {
+            "id": 2,
+            "name": "Caesar Salad",
+            "description": "Fresh romaine lettuce with Caesar dressing.",
+            "price": 5.99,
+            "image": "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Spaghetti Bolognese",
+            "description": "Traditional Italian pasta with a rich meat sauce.",
+            "price": 12.99,
+            "image": "https://img.freepik.com/premium-photo/restaurant-food-restaurant-menu-photos-menu_830198-777.jpg?semt=ais_hybrid"
+        },
+        {
+            "id": 4,
+            "name": "Grilled Chicken Sandwich",
+            "description": "Tender grilled chicken breast served on a fresh bun.",
+            "price": 9.49,
+            "image": "https://i0.wp.com/blog.petpooja.com/wp-content/uploads/2021/10/cultural-cuisine.jpg?resize=696%2C385&ssl=1"
+        },
+        {
+            "id": 5,
+            "name": "Chocolate Lava Cake",
+            "description": "Warm chocolate cake with a gooey center, served with vanilla ice cream.",
+            "price": 6.99,
+            "image": "https://media.istockphoto.com/id/545286388/photo/chinese-food-blank-background.jpg?s=612x612&w=0&k=20&c=pqOIy07YKO5PlU5VxjscwTGRrrZ8PluKMUjSOz-II60="
+        },
+        {
+            "id": 6,
+            "name": "Grilled Salmon",
+            "description": "Fresh salmon fillet grilled to perfection, served with lemon butter sauce.",
+            "price": 15.99,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGG9N3Fd3F8Sw9kG7qwsWVZe62bldXsrfDQw&s"
+        },
+        {
+            "id": 7,
+            "name": "Vegetable Stir Fry",
+            "description": "A colorful mix of fresh vegetables stir-fried with a savory soy-based sauce.",
+            "price": 10.49,
+            "image": "https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content9442.jpg"
+        },
+        {
+            "id": 8,
+            "name": "BBQ Ribs",
+            "description": "Tender pork ribs smothered in a tangy barbecue sauce, served with coleslaw.",
+            "price": 18.99,
+            "image": "https://bsmedia.business-standard.com/_media/bs/img/article/2023-09/14/full/1694673859-4182.jpeg?im=FeatureCrop,size=(826,465)"
+        }
+    ]
+}

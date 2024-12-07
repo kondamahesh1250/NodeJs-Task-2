@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            height: 45px;
+            background-color: cornflowerblue;
+        }
+
+        nav span {
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+        #nav {
+            display: flex;
+            height: 30px;
+            gap: 10px;
+            align-items: center;
+            padding: 5px;
+            background-color: chocolate;
+        }
+
+        li {
+            font-size: 1.2rem;
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .middle {
+            background-image: url("https://t4.ftcdn.net/jpg/05/51/93/35/360_F_551933523_nBWNQeC6vA8sDE6DDDQeo3YmSRQnlOjN.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .middle h1 {
+            color: aliceblue;
+            font-size: 2rem;
+        }
+
+        #content {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-top: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .items {
+            width: 300px;
+            height: auto;
+            border: 2px solid;
+            border-radius: 5px;
+        }
+
+        .fooditems{
+            width: 100%;
+            height: 800px;
+        }
+
+        p {
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+            padding-bottom: 10px;
+        }
+
+
+        footer {
+            background-color: #222;
+            width: 100%;
+            height: auto;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer div {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer p:first-child {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #f4a261;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #e76f51;
+        }
+
+        footer p:last-child {
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-left"><img
+                src="https://static.vecteezy.com/system/resources/previews/009/291/628/non_2x/restaurant-logo-design-vector.jpg"
+                alt="" style="width:50px ;height:50px">
+            <span>Spicy Restaurant</span>
+        </nav>
+
+        <nav id="nav">
+
+        </nav>
+    </header>
+    <section class="middle">
+        <h1>A restaurant is a fantasy—a kind of living fantasy in which diners are the most important members of the
+            cast</h1>
+    </section>
+    <section class="fooditems">
+        <div id="content">
+
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <!-- Contact Information -->
+            <div>
+                <p>© 2024 Delicious Bites</p>
+                <p>123 Foodie Lane, Flavor Town, FT 56789</p>
+                <p>
+                    Email: <a href="mailto:info@deliciousbites.com">info@deliciousbites.com</a> |
+                    Phone: <a href="tel:+1234567890">+1 234-567-890</a>
+                </p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+
+            <!-- Navigation Links -->
+            <!-- <div>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#reservations">Reservations</a>
+            <a href="#contact">Contact</a>
+          </div> -->
+
+            <!-- Disclaimer -->
+            <div>
+                <p>All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        let navbar = document.getElementById("nav");
+        let content = document.getElementById("content");
+
+        async function getinfo() {
+            let response = await fetch("http://localhost:3000/data");
+            let data = await response.json();
+
+            // console.log(data);
+            setdata(data)
+        }
+
+        function setdata(data) {
+
+            for (i in data.nav) {
+                let list = document.createElement("li");
+                list.innerHTML = data.nav[i];
+                navbar.appendChild(list)
+            }
+
+            for (j of data.items) {
+                console.log(j.image);
+                let div = document.createElement("div");
+                div.className = "items";
+                div.innerHTML = `
+                <img src="${j.image}" </img><br>
+                <p><b>Name: </b>${j.name}</p><br>
+                <p><b>Description: </b>${j.description}</p><br>
+                <p><b>Price: </b>${j.price}</p>    
+                `
+                content.appendChild(div);
+            }
+        }
+
+        getinfo()
+    </script>
+</body>
+
+</html>
